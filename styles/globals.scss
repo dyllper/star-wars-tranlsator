@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Star Jedi';
+  src: url('/fonts/Starjedi.eot'); /* IE9 Compat Modes */
+  src: local('Star Jedi'), local('StarJedi'),
+    url('/fonts/StarJedi.woff') format('woff'),
+    /* Modern Browsers */ url('/fonts/Starjedi.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/StarJedi.svg#StarJedi')
+      format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Star Jedi Hollow';
+  src: url('/fonts/Starjhol.eot'); /* IE9 Compat Modes */
+  src: local('Star Jedi Hollow'), local('StarJediHollow'),
+    url('/fonts/StarJediHollow.woff') format('woff'),
+    /* Modern Browsers */ url('/fonts/Starjhol.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/StarJediHollow.svg#StarJediHollow')
+      format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Aurek Besh';
+  src: url('/fonts/Aurek-Besh Narrow.eot');
+  src: local('Aurek Besh'), local('AurekBesh'),
+    url('/fonts/Aurek-BeshNarrow.woff') format('woff'),
+    /* Modern Browsers */ url('/fonts/Aurek-Besh Narrow.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/Aurek-BeshNarrow.svg#AurekBesh')
+      format('svg'); /* Legacy iOS */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  background: url('/starfield.png');
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Star Jedi', sans-serif;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-family: 'Star Jedi Hollow', sans-serif;
+}
+
+button {
+  border: none;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button :focus {
+  border: 1px solid white;
+}

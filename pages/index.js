@@ -1,65 +1,74 @@
+import { useState } from 'react';
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+
+import InstructionPanel from '@components/InstructionPanel';
+import LanguageMenu from '@components/LanguageMenu';
+import TranslationPanel from '@components/TranslationPanel';
 
 export default function Home() {
+  const [selectedLanguage, setSelectedLanguage] = useState();
+
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Star Wars Translator</title>
+        <link rel="icon" href="/favicon.ico"/>
+        <link
+          rel='stylesheet'
+          href='https://use.fontawesome.com/releases/v5.13.1/css/all.css'
+          integrity='sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q'
+          crossOrigin='anonymous'
+        />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <header className='header'>
+        <h1>Star Wars</h1>
+        <h2>Translator</h2>
+      </header>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+      <main>
+        <InstructionPanel />
+        <LanguageMenu setSelectedLanguage={setSelectedLanguage} />
+        {selectedLanguage && <TranslationPanel language={selectedLanguage} />}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <style jsx>{`
+        .container {
+          width: 80%;
+          max-width: 1280px;
+          margin: 0 auto;
+        }
+        
+        .header {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 1rem;
+          color: #fefe00;
+        
+          h1 {
+            font-size: 4rem;
+          }
+        
+          h2 {
+            font-size: 2rem;
+          }
+        }
+        
+        @media (min-width: 480px) {
+          .header {
+            margin-top: 5rem;
+        
+            h1 {
+              font-size: 8rem;
+            }
+        
+            h2 {
+              font-size: 3rem;
+            }
+          }
+        }
+      `}</style>
     </div>
   )
 }
