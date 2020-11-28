@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import RecordButton from '@components//RecordButton';
 
-export default function TranslationPanel({language}) {
+export default function TranslationPanel({ language }) {
   const [originalMessage, setOriginalMessage] = useState('Enter a message');
   const [translatedMessage, setTranslatedMessage] = useState('');
 
@@ -18,25 +18,38 @@ export default function TranslationPanel({language}) {
         }
       })
       .catch((error) => console.error(error));
-  }
+  };
 
   return (
-    <section className='container'>
-      <div className='instruction-panel'>
-        To begin translating to {language}, just click the button below. Alternatively, you may opt to manually type out your message. When you are finished generating your message, just hit translate to begin communicating with species across the galaxy!
+    <section className="container">
+      <div className="instruction-panel">
+        To begin translating to {language}, just click the button below.
+        Alternatively, you may opt to manually type out your message. When you
+        are finished generating your message, just hit translate to begin
+        communicating with species across the galaxy!
       </div>
-      <div className='btn-container'>
+      <div className="btn-container">
         <RecordButton setOriginalMessage={setOriginalMessage} />
-        <button className='translate-btn' onClick={translateMessage}>Translate</button>
+        <button className="translate-btn" onClick={translateMessage}>
+          Translate
+        </button>
       </div>
       <div className="message-container">
-        <div className='text-area-container'>
+        <div className="text-area-container">
           <label htmlFor="original-message">Original Message:</label>
-          <textarea id="original-message" value={originalMessage} onChange={(e) => setOriginalMessage(e.target.value)} placeholder='Enter your message...'></textarea>
+          <textarea
+            id="original-message"
+            value={originalMessage}
+            onChange={(e) => setOriginalMessage(e.target.value)}
+            placeholder="Enter your message..."
+          ></textarea>
         </div>
-        <div className='text-area-container'>
+        <div className="text-area-container">
           <label htmlFor="translated-message">Translated Message:</label>
-          <textarea id="translated-message" value={translatedMessage}></textarea>
+          <textarea
+            id="translated-message"
+            value={translatedMessage}
+          ></textarea>
         </div>
       </div>
       <style jsx>{`
@@ -46,7 +59,7 @@ export default function TranslationPanel({language}) {
           justify-content: space-between;
           align-items: center;
           margin-bottom: 5rem;
-        
+
           .instruction-panel {
             margin-bottom: 3rem;
             line-height: 1.2;
@@ -60,21 +73,21 @@ export default function TranslationPanel({language}) {
             text-shadow:
                       0.2rem 0.2rem 0.8rem #05bdff,
                       0 0 0.8rem #fff; */
-          
+
             p {
-              margin-bottom: 1.8rem;  
+              margin-bottom: 1.8rem;
             }
           }
-        
+
           .btn-container {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             padding-bottom: 1rem;
-        
+
             .translate-btn {
               font-size: 1.5rem;
-              color:#fff;
+              color: #fff;
               background-color: #0078a0;
               padding: 1rem 1.5rem;
               margin-bottom: 1rem;
@@ -92,14 +105,14 @@ export default function TranslationPanel({language}) {
               flex-direction: column;
               justify-content: center;
               align-items: center;
-  
+
               label {
                 color: #fefe00;
                 background-color: #000;
                 font-size: 1.5rem;
                 margin-bottom: 0.5rem;
               }
-              
+
               textarea {
                 width: 100%;
                 height: 100%;
@@ -115,7 +128,6 @@ export default function TranslationPanel({language}) {
 
         @media (min-width: 375px) {
           .container {
-
             .btn-container {
               display: grid;
               grid-template-columns: repeat(2, 1fr);
@@ -130,7 +142,6 @@ export default function TranslationPanel({language}) {
 
         @media (min-width: 480px) {
           .container {
-
             .instruction-panel {
               margin-bottom: 5rem;
             }
@@ -167,5 +178,5 @@ export default function TranslationPanel({language}) {
         }
       `}</style>
     </section>
-  )
+  );
 }

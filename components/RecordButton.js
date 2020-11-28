@@ -39,23 +39,26 @@ export default function RecordButton({ setOriginalMessage }) {
           console.error(err);
         });
     }
-  }
+  };
 
   return (
-    <button className={`record-btn ${isRecording ? 'recording' : ''}`} onClick={handleClick}>
+    <button
+      className={`record-btn ${isRecording ? 'recording' : ''}`}
+      onClick={handleClick}
+    >
       {isRecording ? 'Stop Recording' : 'Start Recording'}
       <style jsx>{`
         .record-btn {
           font-size: 1.5rem;
-          color:#fff;
+          color: #fff;
           background-color: #a2040b;
           padding: 1rem 1.5rem;
           margin-bottom: 1rem;
 
           &.recording {
-            -moz-box-shadow:    inset 0 0 10px #fff;
+            -moz-box-shadow: inset 0 0 10px #fff;
             -webkit-box-shadow: inset 0 0 10px #fff;
-            box-shadow:         inset 0 0 10px #fff;
+            box-shadow: inset 0 0 10px #fff;
           }
         }
 
@@ -72,5 +75,5 @@ export default function RecordButton({ setOriginalMessage }) {
         }
       `}</style>
     </button>
-  )
+  );
 }

@@ -1,17 +1,14 @@
 export default function InstructionPanel() {
   return (
-    <section className='container'>
+    <section className="container">
       <p>Welcome to a galaxy far, far away!</p>
       <p>
-        Here there are all manner of intelligent species, each with their
-        own unique languages. In order to facilitate better inter-species
-        communication, this application will allow you to translate your
-        spoken or written words into the written language of a specified
-        species.
+        Here there are all manner of intelligent species, each with their own
+        unique languages. In order to facilitate better inter-species
+        communication, this application will allow you to translate your spoken
+        or written words into the written language of a specified species.
       </p>
-      <p>
-        To begin, please select a language from the options provided.
-      </p>
+      <p>To begin, please select a language from the options provided.</p>
       <style jsx>{`
         .container {
           margin: 3rem 0;
@@ -26,12 +23,12 @@ export default function InstructionPanel() {
           text-shadow:
                     0.2rem 0.2rem 0.8rem #05bdff,
                     0 0 0.8rem #fff; */
-        
+
           p {
-            margin-bottom: 1.8rem;  
+            margin-bottom: 1.8rem;
           }
         }
-        
+
         @media (min-width: 480px) {
           .container {
             margin: 5rem 0;
@@ -39,5 +36,5 @@ export default function InstructionPanel() {
         }
       `}</style>
     </section>
-  )
+  );
 }
