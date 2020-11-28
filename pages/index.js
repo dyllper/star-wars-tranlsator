@@ -57,7 +57,6 @@ export default function Home() {
         
         @media (min-width: 480px) {
           .header {
-            margin-top: 5rem;
         
             h1 {
               font-size: 8rem;
