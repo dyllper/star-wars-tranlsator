@@ -49,7 +49,7 @@ export default function RecordButton({ setOriginalMessage }) {
       {isRecording ? 'Stop Recording' : 'Start Recording'}
       <style jsx>{`
         .record-btn {
-          font-size: 1.5rem;
+          font-size: 2.4rem;
           color: #fff;
           background-color: #a2040b;
           padding: 1rem 1.5rem;
@@ -59,18 +59,6 @@ export default function RecordButton({ setOriginalMessage }) {
             -moz-box-shadow: inset 0 0 10px #fff;
             -webkit-box-shadow: inset 0 0 10px #fff;
             box-shadow: inset 0 0 10px #fff;
-          }
-        }
-
-        @media (min-width: 375px) {
-          .record-btn {
-            font-size: 1.8rem;
-          }
-        }
-
-        @media (min-width: 480px) {
-          .record-btn {
-            font-size: 2.4rem;
           }
         }
       `}</style>

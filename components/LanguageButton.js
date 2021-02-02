@@ -1,19 +1,28 @@
-export default function LanguageButton({ language, clickHandler }) {
+import { motion } from 'framer-motion';
+
+export default function LanguageButton({ language, clickHandler, delay }) {
   return (
     <>
-      <button
-        id={`${language}btn`}
-        className="language-btn"
-        onClick={() => clickHandler(language)}
+      <motion.div
+        transition={{ ease: 'easeInOut', duration: 0.25, delay: delay }}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
       >
-        {language}
-      </button>
+        <button
+          id={`${language}btn`}
+          className="language-btn"
+          onClick={() => clickHandler(language)}
+        >
+          {language}
+        </button>
+      </motion.div>
       <style jsx>{`
         .language-btn {
           font-size: 1.5rem;
           color: #fff;
           background-color: #0078a0;
           padding: 1rem 1.5rem;
+          width: 100%;
         }
 
         .selected {

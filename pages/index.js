@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 import InstructionPanel from '@components/InstructionPanel';
 import LanguageMenu from '@components/LanguageMenu';
@@ -21,10 +22,16 @@ export default function Home() {
         />
       </Head>
 
-      <header className="header">
-        <h1>Star Wars</h1>
-        <h2>Translator</h2>
-      </header>
+      <motion.header
+        transition={{ ease: 'easeInOut', duration: 0.75 }}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+      >
+        <div className="header">
+          <h1>Star Wars</h1>
+          <h2>Translator</h2>
+        </div>
+      </motion.header>
 
       <main>
         <InstructionPanel />
@@ -55,7 +62,7 @@ export default function Home() {
           }
         }
 
-        @media (min-width: 480px) {
+        @media (min-width: 620px) {
           .header {
             h1 {
               font-size: 8rem;

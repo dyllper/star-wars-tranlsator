@@ -30,6 +30,7 @@ export default function LanguageMenu({ setSelectedLanguage }) {
           <LanguageButton
             language={language}
             clickHandler={onButtonClick}
+            delay={(1 + index) * 0.15 + 1}
             key={index}
           />
         ))}
@@ -49,7 +50,7 @@ export default function LanguageMenu({ setSelectedLanguage }) {
           }
         }
 
-        @media (min-width: 480px) {
+        @media (min-width: 620px) {
           .language-menu {
             margin-bottom: 5rem;
 

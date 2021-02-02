@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "framer-motion": "^3.2.2-rc.1",
     "ibm-watson": "^5.7.1",
     "next": "10.0.3",
     "next-on-netlify": "^2.6.3",

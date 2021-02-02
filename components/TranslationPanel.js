@@ -59,6 +59,7 @@ export default function TranslationPanel({ language }) {
           justify-content: space-between;
           align-items: center;
           margin-bottom: 5rem;
+          animation: fadeIn ease 1s;
 
           .instruction-panel {
             margin-bottom: 3rem;
@@ -86,7 +87,7 @@ export default function TranslationPanel({ language }) {
             padding-bottom: 1rem;
 
             .translate-btn {
-              font-size: 1.5rem;
+              font-size: 2.4rem;
               color: #fff;
               background-color: #0078a0;
               padding: 1rem 1.5rem;
@@ -105,6 +106,7 @@ export default function TranslationPanel({ language }) {
               flex-direction: column;
               justify-content: center;
               align-items: center;
+              animation: expandIn 0.5s ease-in-out;
 
               label {
                 color: #fefe00;
@@ -126,21 +128,27 @@ export default function TranslationPanel({ language }) {
           }
         }
 
-        @media (min-width: 375px) {
-          .container {
-            .btn-container {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              column-gap: 1rem;
-
-              .translate-btn {
-                font-size: 1.8rem;
-              }
-            }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
           }
         }
 
-        @media (min-width: 480px) {
+        @keyframes expandIn {
+          from {
+            opacity: 0;
+            transform: scale(0);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @media (min-width: 620px) {
           .container {
             .instruction-panel {
               margin-bottom: 5rem;
@@ -150,10 +158,6 @@ export default function TranslationPanel({ language }) {
               display: grid;
               grid-template-columns: repeat(2, 1fr);
               column-gap: 2rem;
-
-              .translate-btn {
-                font-size: 2.4rem;
-              }
             }
 
             .message-container {
@@ -163,7 +167,7 @@ export default function TranslationPanel({ language }) {
 
               .text-area-container {
                 height: 40rem;
-                width: 40%;
+                width: 45%;
 
                 label {
                   font-size: 1.6rem;
